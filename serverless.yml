@@ -1,0 +1,18 @@
+service: project1
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 1024
+  timeout: 300
+  stage: ${opt:stage, 'dev'}
+  region: ap-south-1
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
