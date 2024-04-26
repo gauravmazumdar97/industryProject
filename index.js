@@ -3,14 +3,16 @@ const mongoose = require('mongoose');
 const app = express();
 const port = 3001;
 app.use(express.json());
+require('dotenv').config();
+
 
 // Connect to MongoDB
-mongoose.connect("mongodb://0.0.0.0/firstApp")
+mongoose.connect(process.env.DB_URL)
     .then(() => {
         console.log("DATABASE CONNECTED");
         // Start the server once the database is connected
         app.listen(port, () => {
-            console.log(`Server is running on port ${port}`);
+            console.log(`Server is running on port ${process.env.DB_PORT}`);
         });
     })
     .catch(err => {
