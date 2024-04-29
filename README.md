@@ -1,4 +1,4 @@
-# industryProject   (EC2 - myServerlessProject-1)
+# industryProject   <u>(EC2 - myServerlessProject-1)</u>
 
 ## Overview
 
